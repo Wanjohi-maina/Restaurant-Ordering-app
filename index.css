@@ -1,0 +1,174 @@
+/* Layout */
+body {
+    margin: 0 auto;
+    font-family: "Smythe", system-ui;
+    width: 600px;
+} 
+
+header {
+    background-image: url(ferks-guare-KEZdWfYD-ow-unsplash.jpg);
+    background-size: cover;
+    color: white;
+    background-position: center;
+    padding: 40px;
+}
+
+main {
+    border: 1px solid #ccc;
+}
+
+.sub-title {
+    font-size: 25px;
+    margin: 0;
+
+}
+
+/* Typography */
+
+h1, p, h3, h2 {
+    margin: 0;
+}
+
+/* Menu Section */
+
+.menu-item {
+    display: flex;
+	align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 25px;
+    border-bottom: 1px solid #ccc;
+}
+.menu-info {
+    flex-grow: 1;
+}
+
+.menu-emoji {
+    font-size: 4.92rem;
+    line-height: 1.25;
+    opacity: 72%;
+}
+.menu-action button {
+    font-size: 1.5rem;
+    padding: 6px 12px;
+    cursor: pointer;
+    border-radius: 50%;
+    border: none;
+    background:  #e0dfdf;
+    color: #000;
+}
+.menu-action button:hover {
+    background: #000;
+    color: white;
+}
+.menu-ingredients {
+    color: #6b6a6acc;
+}
+.menu-price {
+    margin-top: 5px;
+}
+
+/* Order Section */
+
+.order-cart {
+    padding: 25px;
+}
+.order-items {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 5px;   
+}
+.order-details {
+    display: flex;
+    gap: 5px;
+}
+.order-remove {
+    border: none;
+    color: #6b6a6acc;
+    cursor: pointer;
+    background: transparent;
+    font-size: 16px;
+    font-family: inherit;
+}
+.order-price {
+    margin-top: 20px;
+    border-top: 2px solid #000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 20px;
+}
+.order-title {
+    text-align: center;
+    margin-bottom: 40px;
+}
+#complete-order-btn {
+    width: 100%;
+    border: none;
+	line-height: 24px;
+	padding: 16px 20px;
+	cursor: pointer;
+    font-size: 20px;
+	margin-top: 30px;
+    background: #16DB99;
+    color: white;
+    font-family: inherit;
+    font-weight: bold;
+}
+.bold {
+    font-weight: bold;
+}
+
+/* Payment Modal Section */
+
+.payment-modal {
+    display: none;      /* Displayed in JavaScript */
+    position: fixed;
+    right: 0;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    height: 430px;
+    width: 350px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 6px 5px #757575;
+    background-color: white;
+    padding: 20px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+input {
+    display: block;
+    margin: 15px auto;
+    border: 1px solid #2c2b2b;
+    padding: 15px;
+    width: 90%;
+    border-radius: 3px;
+}
+.payment-header {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 40px;
+}
+.payment-btn {
+    display: block;
+    margin: 0 auto;
+    padding: 15px;
+    width: 100%;
+    background: #16DB99;
+    border: none;
+    color: white;
+    font-family: inherit;
+    cursor: pointer;
+    margin-top: 30px;
+}
+.note {
+    text-align: center;
+    background: #ECFDF5;
+    font-size: 32px;
+    margin: 1.5em 1em;
+    padding: 1.25em 0.5em;
+    color: #065F46;
+    border-radius: 0.188em;
+}

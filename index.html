@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Restaurant Ordering app</title>
+        <!-- Meta-data -->
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- CSS link -->
+        <link rel="stylesheet" href="index.css">
+        <!-- Google fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Smythe&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <header>
+            <h1>Wanjohi's Diner</h1>
+            <p class="sub-title">The best burgers and pizzas in town.</p>
+        </header>
+        <main>
+            <section id="menu-section">
+                 <!-- Menu section -->
+            </section>
+            <section id="order-section">
+                  <!-- Your order section -->
+            </section>
+        </main>
+        <div class="payment-modal" id="payment-modal">
+            <form id="payment-modal-form">
+               <h2 class="payment-header">Enter card details</h2>
+               <input 
+                  type="text" 
+                  name="fullName" 
+                  aria-label="Enter your name"
+                  placeholder="James Bond" 
+                  required
+                >
+               <input 
+                  type="text" 
+                  name="cardNumber" 
+                  aria-label="Enter card number" 
+                  placeholder="1234 5678 9012 3456"
+                  maxlength="19"
+                  pattern="\d{4}[\s]?\d{4}[\s]?\d{4}[\s]?\d{4}" 
+                  inputmode="numeric"
+                  required
+                >
+               <input 
+                  type="text" 
+                  name="cvv" 
+                  aria-label="Enter CVV"
+                  placeholder="CVV (3 or 4 digits)" 
+                  maxlength="4" 
+                  pattern="\d{3,4}" 
+                  inputmode="numeric"  
+                  required
+                >
+               <button type="submit" class="payment-btn bold">Pay</button>
+            </form>
+        </div>
+	    <script type="module" src="index.js"></script>
+    </body>
+</html>
+
