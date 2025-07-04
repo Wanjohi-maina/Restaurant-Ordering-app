@@ -2,7 +2,7 @@ import { menuArray } from '/data.js'
 const paymentModalForm = document.getElementById("payment-modal-form")
 let orders = []
 
-document.addEventListener('click', function(e){
+document.addEventListener('click', e => {
    if(e.target.dataset.add){
       handleAddItem(e.target.dataset.add)
    }
@@ -16,14 +16,10 @@ document.addEventListener('click', function(e){
 
 function handleAddItem (itemId) {
     // Check if the item is already in the orders array
-   const alreadyAdded = orders.some(function (item){
-     return item.id === Number(itemId)
-   }) 
+   const alreadyAdded = orders.some( item =>  item.id === Number(itemId)) 
   // Check if the item has NOT already been added in the orders array
    if (!alreadyAdded) {
-   const selectedItem = menuArray.find(function (item){
-     return item.id === Number(itemId)
-   })
+   const selectedItem = menuArray.find( item =>  item.id === Number(itemId))
    if(selectedItem){
        orders.push(selectedItem)
    }
@@ -35,7 +31,7 @@ function getOrderCart () {
     if (orders.length === 0){
         return ''
     }
-    const orderHtml = orders.map(function (order){
+    const orderHtml = orders.map( order => {
      return `
         <div class="order-items">
             <div class="order-details">
@@ -46,9 +42,7 @@ function getOrderCart () {
         </div>
      `
     }).join('')
-    const totalPrice = orders.reduce(function(total, currentItem){
-         return total + currentItem.price
-    }, 0)
+    const totalPrice = orders.reduce((total, currentItem) => total + currentItem.price, 0)
     return `
         <div class="order-cart">
             <h2 class="order-title">Your Order</h2>
@@ -77,7 +71,7 @@ function handleCompeleteOrder() {
 }
 
 
-paymentModalForm.addEventListener('submit', function (e){
+paymentModalForm.addEventListener('submit', e => {
      e.preventDefault()
      orderFormData ()
      closePaymentModal () 
@@ -90,7 +84,7 @@ function orderFormData (){
     orders = []
     render ()
 
-    const thanksMessage = `<p class="note">Thanks, ${name}! Your order is on it's way!</p>`
+    const thanksMessage = `<p class="note">Thanks, ${name}! Your order is on its way!</p>`
     document.getElementById('order-section').innerHTML += thanksMessage
 }
 
@@ -100,7 +94,7 @@ function closePaymentModal () {
 }
 
 function getMenuHtml() {
-    return menuArray.map(function (menuItem) {
+    return menuArray.map( menuItem => {
         const { name, ingredients, id, price, emoji } = menuItem
         return `
         <div class="menu-item">
