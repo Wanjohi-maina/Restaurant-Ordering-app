@@ -172,3 +172,12 @@ input {
     color: #065F46;
     border-radius: 0.188em;
 }
+.order-discount {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.green-text {
+   color: #16DB99;
+   font-weight: bold;
+}
