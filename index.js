@@ -20,16 +20,17 @@ document.addEventListener('click', e => {
 function handleAddItem (itemId) {
    const existingItem = orders.find( item =>  item.id === Number(itemId)) 
    if (existingItem) {
-      existingItem.quantity++
+   existingItem.quantity++
    }
    else {
-    const selectedItem = menuArray.find( item =>  item.id === Number(itemId))
-    if(selectedItem){
-       orders.push({...selectedItem, quantity:1})
-     } 
+    const selectedItem = menuArray.find( item => item.id === Number(itemId))
+    if (selectedItem) {
+        orders.push({...selectedItem, quantity: 1})
+    }
    }
-   render ()
+  render ()
 }
+
 
 // Build the cart HTML with quantity, subtotal, discount
 function getOrderCart () {
