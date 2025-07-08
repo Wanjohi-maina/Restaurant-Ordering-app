@@ -31,42 +31,41 @@ function handleAddItem (itemId) {
   render ()
 }
 
-
 // Build the cart HTML with quantity, subtotal, discount
 function getOrderCart () {
     if (orders.length === 0){
         return ''
     }
     const orderHtml = orders.map( order => {
-       const itemTotal = order.price * order.quantity
+     const itemTotal = order.price * order.quantity   
      return `
         <div class="order-items">
             <div class="order-details">
-                <h3>${order.name}</h3>
+                <h3>${order.name} x${order.quantity}</h3>
                 <button class="order-remove" data-remove="${order.id}">remove</button>
             </div>
             <p class="bold">$${itemTotal.toFixed(2)}</p>
         </div>
      `
     }).join('')
-   
-   // Calculate the total price before discount
+
+    // Calculate the total price before discount
     const totalPrice = orders.reduce((total, item) => total + (item.price * item.quantity), 0)
-   
-   // Apply discount rules
+
+    // Apply discount rules
     let discountRate = 0
     if (totalPrice > 100) {
-       discountRate = 0.15 // 15%
-     }
-    else if (totalPrice > 50 ){
-      discountRate = 0.10 // 10%
+        discountRate = 0.15 // 15%
+    }
+    else if (totalPrice > 50) {
+        discountRate = 0.10 // 10%
     }
     const discountAmount = totalPrice * discountRate
-    const finalTotal = totalprice - discountAmount
-   
-   // Build discount HTML using if/else
+    const finalTotal = totalPrice - discountAmount
+
+    // Build discount HTML using if/else
     let discountHtml = ''
-    if (discountRate > 0 ){
+    if (discountRate > 0) {
         discountHtml = `
         <div class="order-discount">
             <h2 class="order-subtitle">Discount (${discountRate * 100}%):</h2>
@@ -74,8 +73,8 @@ function getOrderCart () {
         </div>   
         `
     }
-   
-   // Return the full HTML string
+
+ // Return the full HTML string
     return `
         <div class="order-cart">
             <h2 class="order-title">Your Order</h2>
@@ -93,7 +92,7 @@ function getOrderCart () {
         </div>
     `
 }
-
+   
 // Remove item or decrease quantity
 function handleRemoveItem(itemId) {
     for (let i = 0; i < orders.length; i++) {
